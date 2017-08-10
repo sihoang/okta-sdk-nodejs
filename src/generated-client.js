@@ -685,6 +685,21 @@ class GeneratedApiClient {
     const request = this.http.get(url);
     return request;
   }
+
+  /**
+   * 
+   * Auth {{url}}/api/v1/authn
+   */
+  authn(username, password) {
+    let url = `${this.baseUrl}/api/v1/authn`;
+    const request = this.http.postJson(url, {
+      body: {
+        username,
+        password
+      }
+    });
+    return request;
+  }
 }
 
 module.exports = GeneratedApiClient;
